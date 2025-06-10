@@ -1,0 +1,37 @@
+# Load Testing Scripts
+
+## Overview
+
+This directory contains load testing scripts for our application, using both K6 browser and HTTP modules.
+
+## Directory Structure
+
+/load-tests/
+/browser/ # Scripts for browser-based load testing
+/http/ # Scripts for API load testing
+
+## How to Run
+
+1. Install k6
+2. Navigate to directory
+3. Run the scripts
+
+k6 run -e BASEURL='url' business_contact_form.js --summery-export=summary1.json
+k6 run -e BASEURL='url' make_suggestion.js --summery-export=summary2.json
+k6 run -e BASEURL='url' -e EMAIL='email id' business_script.js --summery-export=summary.json
+
+# Run script for Anynomus and PhoneLogin
+
+k6 run Anynomus_and_Phoneloginn.js
+
+# Run script for Business owner contact
+
+k6 run -e BASEURL=http://localhost:3000 busines_owner_contact.js
+
+# Run script for business floe creds
+
+k6 run business_flow_creds.js
+
+# Run script for Email login feedback
+
+k6 run Email_Login_feedback.js
